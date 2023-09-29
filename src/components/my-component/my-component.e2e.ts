@@ -4,7 +4,10 @@ describe('my-component', () => {
   it('looks the same', async () => {
     const page = await newE2EPage();
 
-    await page.setContent('<my-component></my-component>');
+    // Line which generated the initial screenshot:
+    // await page.setContent('<my-component></my-component>');
+
+    await page.setContent('<my-component></my-component><div>Just some content added to create a visual difference</div>');
 
     // By default the screenshot size is 800 x 600
     // But the width and height parameters sent to pixel-match are 600 x 600
