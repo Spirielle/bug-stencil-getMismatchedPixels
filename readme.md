@@ -8,20 +8,12 @@ The error message received is "Error: Failed: "getMismatchedPixels timeout: 1500
 
 ## Repro
 
-Setup project by running
+  - 1 Run `yarn install`
+  - 2 Run `yarn build`
+  - 3 Run `yarn test`
+  - 4 Comment line 13 of `my-component.e2e.ts`
+  - 5 Uncomment line 16 of `my-component.e2e.ts`
+  - 6 Run `yarn test` again
 
-```bash
-yarn install
-yarn build
-```
 
-Execute e2e by calling
-
-```bash
-yarn run test
-```
-
-Because there's already a screenshot in the repo, the new screenshot will be different and the error will occur.
-
-Error seems to be thrown in \node_modules\@stencil\core\screenshot\pixel-match.js  
-but it times out rather than returning the actual error.
+We get error "Error: Image data size does not match width/height." even though both png are of the same size.
