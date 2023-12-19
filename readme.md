@@ -18,3 +18,5 @@ We now get the underlying error : "Error: Image data size does not match width/h
 
 
 We get error "Error: Image data size does not match width/height." even though both png are of the same size.
+
+If we set the clip to 600 x 600, there is no issue.
