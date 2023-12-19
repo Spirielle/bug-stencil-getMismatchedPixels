@@ -4,16 +4,17 @@
 
 This app is a simple starter project used to give simple repro steps regarding an issue.
 The issue happens during the e2e tests when screenshots are compared.
-The error message received is "Error: Failed: "getMismatchedPixels timeout: 15000ms"
+~~The error message received is "Error: Failed: "getMismatchedPixels timeout: 15000ms"~~
 
+We now get the underlying error : "Error: Image data size does not match width/height."
 ## Repro
 
-  - 1 Run `yarn install`
-  - 2 Run `yarn build`
-  - 3 Run `yarn test`
-  - 4 Comment line 13 of `my-component.e2e.ts`
-  - 5 Uncomment line 16 of `my-component.e2e.ts`
-  - 6 Run `yarn test` again
+  1. Run `yarn install`
+  2. Run `yarn run build`
+  3. Run `yarn test`
+  4. Comment line 13 of `my-component.e2e.ts`
+  5. Uncomment line 16 of `my-component.e2e.ts`
+  6. Run `yarn test` again
 
 
 We get error "Error: Image data size does not match width/height." even though both png are of the same size.
